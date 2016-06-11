@@ -1,0 +1,10 @@
+"threshold variability use I_inj file in same folder for injected current"
+	dxdt:2,
+	v:--70,
+	u:-20,
+	I:0,
+	a:0.03,
+	b:0.25,
+	c:-60,
+	d:4;
+

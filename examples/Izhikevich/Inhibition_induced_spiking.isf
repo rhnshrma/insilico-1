@@ -1,0 +1,10 @@
+"Inhibition-induced spiking use I_inj file in same folder for injected current"
+	dxdt:2,
+	v:--70,
+	u:-20,
+	I:80,
+	a:-0.02,
+	b:-1,
+	c:-60,
+	d:8;
+
