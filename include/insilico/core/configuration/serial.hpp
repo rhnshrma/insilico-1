@@ -63,6 +63,8 @@ void initialize(int argc, char **argv) {
       "\t-o   Output file\n"
       "\t-n   Neuron configuration file\n"
       "\t-s   Synapse configuration file (optional)\n"
+      "\t-t   Simulation Duration\n"
+      "\t-f   Time Step\n"
       "\t-e   External current configuration file (optional)\n"
       "\t-d   Dynamic parameters configuration file (optional)\n\n";
 
