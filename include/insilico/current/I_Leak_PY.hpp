@@ -1,6 +1,6 @@
 /*
- current/I_Leak_SquidAxon_HH_HH1952.hpp - Leak current flowing across neuronal membrane.
-                                          (Hodgkin-Huxley, 1952)
+ current/I_Na_HH1952.hpp - Current flowing across neuronal membrane due to
+                           Sodium (Na) conductance. (Hodgkin-Huxley, 1952)
 
  Copyright (C) 2014 Pranav Kulkarni, Collins Assisi Lab, IISER, Pune <pranavcode@gmail.com>
 
@@ -21,30 +21,35 @@
 /*
  Brief:
 
- Leak current flow across neuronal membrane. (Hodgkin-Huxley, 1952)
+ Current that flows through Sodium (Na) channel due to the potential difference
+ caused by Sodium (Na) conductance across neuronal membrane. (Hodgkin-Huxley, 1952)
 */
 
-#ifndef INCLUDED_I_LEAK_SQUIDAXON_HH_HH1952_HPP
-#define INCLUDED_I_LEAK_SQUIDAXON_HH_HH1952_HPP
+#ifndef INCLUDED_I_Leak_PY_HPP
+#define INCLUDED_I_Leak_PY_HPP
 
 #include "insilico/core/engine.hpp"
 
 namespace insilico {
 
-class I_Leak_SquidAxon_HH_HH1952 {
+class I_Leak_PY {
  public:
-  static void current(state_type &variables, state_type &dxdt, const double t, unsigned index) {
-    double gl = 0.3, el = 10.6;
+  static void current(const state_type &variables, state_type &dxdt, const double t, unsigned index) {    
 
     unsigned v_index = engine::neuron_index(index, "v");
+
+    
     double v = variables[v_index];
 
-    // Current
-    engine::neuron_value(index, "I_Leak_SquidAxon_HH_HH1952", (gl * (v - el)));
+
+
+    										// Current
+     engine::neuron_value(index,"I_Leak_PY",(-1*(0.1*(v+61.0))));
 
   } // function current
-}; // class I_Leak_SquidAxon_HH_HH1952
+}; // class I_Leak_PY
 
 } // insilico
 
 #endif
+
